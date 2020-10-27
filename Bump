@@ -1,0 +1,60 @@
+#include <iostream>
+
+using namespace std;
+
+void f(int *pa, int *pb, int *pc) {
+    (*pa)++;
+    (*pb) += 20;
+    (*pc) = *pb * 5;
+    }
+
+int main()
+{
+  int a = 5, b = 2, c = 6, d = 7, s;
+  int *pa = &a; 
+  int *pb = &b; 
+  int *pc = &c;
+  f(&a, &b, &c);
+  s = c;
+  c = d;
+  d = s;
+  cout << "a = " << a << endl;
+  cout << "______" << endl;
+  cout << "b = " << b << endl;
+  cout << "______" << endl;
+  cout << "c = " << c << endl;
+  cout << "______" << endl;
+  cout << "d = " << d << endl;
+  return 0;
+}
+
+
+
+
+
+
+
+
+#include <iostream>
+
+using namespace std;
+
+int main () {
+    int size;
+    int min = 999;
+cout << "Enter size ";
+cin >> size;
+int arr[6];
+for (int i = 0; i < size; i++) {
+    arr[i] = rand ()% 20;
+}
+for (int i = 0; i < size; i++) {
+    cout << arr[i] << "\t";
+}
+for (int i = 0; i < size; i++){
+    if (arr[i] < min)
+    min = arr[i];
+}
+cout << "Tiny number is " << min << endl;
+return 0;
+}
